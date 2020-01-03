@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>商品滚动</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		.div1{
+			margin: 100px auto 0;
+			width: 1000px;
+			height: 200px;
+			background-color: gold;
+			overflow: hidden;
+			border: 1px solid #000;
+			position: relative;
+		}
+
+		.ul{
+			width: 2000px;
+			position: absolute;
+			left: 0px;
+
+		}
+
+		.ul li{
+			font:normal 16px/180px 'Microsoft Yahei';
+			text-align: center;
+			display: block;
+			width: 180px;
+			height: 180px;
+			background-color: green;
+			color: blue;
+			margin: 10px;
+			float: left;
+			
+		}
+	</style>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var div1 = document.getElementById('div1');
+			var div1ul = div1.getElementsByTagName('ul')[0];
+			div1ul.innerHTML += div1ul.innerHTML
+
+			var ulleft = 0
+			function moving() {
+				ulleft -= 5;
+				div1ul.style.left = ulleft + 'px';
+
+				if (ulleft < -1000)
+				{
+					ulleft = 0;
+				}
+			}
+
+			setInterval(moving,30)
+			
+		}
+	</script>
+
+
+
+
+</head>
+<body>
+<div class="div1" id="div1">
+	<ul class="ul">
+		<li>水果1</li>
+		<li>水果2</li>
+		<li>水果3</li>
+		<li>水果4</li>
+		<li>水果5</li>
+	</ul>
+</div>
+</body>
+</html>

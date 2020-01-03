@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test01</title>
+    <style type="text/css">
+        .test01{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            position: absolute;
+            left: 0px;
+            top: 200px;
+            text-align: center;
+            font: normal 18px/200px "Microsoft Yahei";
+            color: blue;
+
+        }
+    </style>
+    <script type="text/javascript">
+    	window.onload = function() {
+    		var dDiv = document.getElementById('test01');
+    		var dleft = 0;
+            var dspeed = 5;
+    		var timer = setInterval(function(){
+                dleft += dspeed;
+                dDiv.style.left = dleft + 'px';
+                if (dleft > 700 || dleft < 0)
+                {
+                    dspeed = -dspeed;
+                }
+            },30); 
+    	}
+
+
+    </script>
+</head>
+<body>
+
+<div id="test01" class="test01">季城希爱吴婷婷</div>
+
+
+
+</body>
+</html>

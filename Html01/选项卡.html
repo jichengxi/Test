@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>选项卡</title>
+	<style type="text/css">
+		.btns input{
+			border: 0;
+			width: 100px;
+			height: 50px;
+			background-color: #ddd;
+			margin: 0;
+			padding: 0;
+		}
+
+		.btns .inputdefault{
+			background-color: gold;
+		}
+
+		.cons{
+			width: 600px;
+			height: 200px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.cons .cons01{
+			width: 1800px;
+			height: 200px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			
+		}
+
+		.cons .cons01 div{
+			width: 600px;
+			height: 200px;
+			background-color: gold;
+			font: normal 16px/200px 'Mircosoft Yahei';
+			text-align: center;
+			float: left;
+
+
+		}
+
+/*		.cons .divdefault{
+			display: block;
+			background-color: gold;
+			font: normal 16px/200px 'Mircosoft Yahei';
+			text-align: center;
+		}*/
+	</style>
+
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var $btn = $(".btns input");
+			// var $div = $('.cons div');
+			var $con = $(".cons .cons01");
+
+			$btn.click(function(){
+				$(this).addClass('inputdefault').siblings().removeClass('inputdefault');
+				//$div.eq( $(this).index() ).addClass('divdefault').siblings().removeClass('divdefault');			
+				$con.stop().animate({'left':-600*$(this).index()});
+				
+
+			});
+
+
+		})
+	</script>
+
+
+
+</head>
+<body>
+	<div class="btns">
+		<input type="button" name="" value="01" class="inputdefault">
+		<input type="button" name="" value="02">
+		<input type="button" name="" value="03">		
+	</div>
+
+	<div class="cons">
+		<div class="cons01">
+			<div>选项卡一</div>
+			<div>选项卡二</div>
+			<div>选项卡三</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
