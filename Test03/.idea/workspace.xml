@@ -2,41 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0adc8b5-1755-4f5c-8a3f-01e8ac74ea22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Test/Test/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/Test/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/Test/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/Test/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/Test/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/booktest/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/booktest/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/booktest/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/booktest/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/booktest/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/booktest/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/booktest/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/booktest/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Test03.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Test03.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test03/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test03/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test03/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test03/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1Vf3VCDL6Vx4fbjIJ2hxT6ZmugP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Html01" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/booktest" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\GitHub\Test\Test03\booktest" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -68,5 +73,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1577707206708" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1578313988568">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578313988568" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578322291351">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578322291351" />
   </component>
 </project>
