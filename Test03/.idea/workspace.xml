@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0adc8b5-1755-4f5c-8a3f-01e8ac74ea22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Test03.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Test03.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test03/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test03/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test03/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test03/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test03/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test03/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booktest/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booktest/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/booktest/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booktest/login.html" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/booktest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test04" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -43,15 +45,15 @@
       <recent name="F:\GitHub\Test\Test03\booktest" />
     </key>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
   </component>
@@ -67,6 +69,19 @@
       <updated>1577630343605</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1577707206708">

@@ -5,27 +5,28 @@
     <title>登录页面</title>
     <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
-        $('#btnlogin').click(function(){
-            var $username = $('#username').val()
-            var $password = $('#password').val()
+        $(function(){
+            $('#btnlogin').click(function(){
+                var $username = $('#username').val()
+                var $password = $('#password').val()
+                var $remember = $('#remember').val()
 
-            $.ajax({
-                'url': '/login_check',
-                'type': 'post',
-                'data': {'username':$username,'password':$password},
-                'dataType':'json',
-            }).success(function (data) {
-                // 登录成功data.res=1
-                // 登录失败data.res=0
-                if (data.res ==0){
-                    $('#errmsg').html('用户名或者密码错误')
-                }
-                else{
-                    location.href = '/index'
-                }
+                $.ajax({
+                    'url': '/login_check',
+                    'type': 'post',
+                    'data': {'username':$username,'password':$password,'remember':$remember},
+                    'dataType':'json',
+                }).done(function(data){
+                    // 登录成功data.res=1
+                    // 登录失败data.res=0
+                    if (data.res == 0){
+                        $('#errmsg').show().html('用户名或者密码错误')
+                    }
+                    else{
+                        location.href = '/index'
+                    }
+                })
             })
-
-
         })
     </script>
     <style type="text/css">
@@ -40,8 +41,9 @@
 </head>
 <body>
     <div>
-        用户名：<input type="text" id="username"><br/>
-        密码：<input type="password" id="password"><br/>
+        用户名：<input type="text" id="username" value="{{ username }}"><br/>
+        密码：<input type="password" id="password" value="{{ password }}"><br/>
+        <input type="checkbox" id="remember">记住用户名<br/>
         <input type="button" id="btnlogin" value="登录">
         <div id="errmsg"></div>
     </div>
