@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.user',
-    'apps.goods',
-    'apps.order',
-    'apps.cart',
+    'tinymce',  # 富文本编辑器
+    'apps.user',  # 用户模块
+    'apps.goods',  # 商品模块
+    'apps.order',  # 购物车模块
+    'apps.cart',  # 订单模块
 ]
 
 MIDDLEWARE = [
@@ -107,13 +108,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# django自带的用户认证系统
+AUTH_USER_MODEL = 'user.User'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'Aisa/ShangHai'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -127,3 +131,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advaned',
+    'width': 600,
+    'height': 400,
+}
+
+# 发送邮件配置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# smpt服务地址
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+# 发送邮件的邮箱
+EMAIL_HOST_USER = '948788684@qq.com'
+# 在邮箱中设置的客户端授权密码
+EMAIL_HOST_PASSWORD = 'unxfccsywzjubdjb'
+# 收件人看到的发件人
+EMAIL_FROM = '天天生鲜<948788684@qq.com>'
+
