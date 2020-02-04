@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = '@x12#8540m7@ux5-d(2kpf+6q*s10byo=owtpnk10hm(8u!#(w'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -74,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'TTShengXian.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -88,7 +85,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -111,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # django自带的用户认证系统
 AUTH_USER_MODEL = 'user.User'
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -124,7 +119,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -150,3 +144,28 @@ EMAIL_HOST_PASSWORD = 'unxfccsywzjubdjb'
 # 收件人看到的发件人
 EMAIL_FROM = '天天生鲜<948788684@qq.com>'
 
+# celery设置
+CELERY_BROKER_URL = 'redis://192.168.0.250:6379'
+# CELERY_ACCEPT_CONTENT = ['json']
+CELERY_RESULT_BACKEND = 'redis://192.168.0.250:6379'
+# CELERY_TASK_SERIALIZER = 'json'
+
+# django-redis 缓存配置
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://192.168.0.250:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
+# 配置登录url地址
+LOGIN_URL = '/user/login'  # /login?next=/user
+
+# 设置django文件存储类
+DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.FDFSStorage'
