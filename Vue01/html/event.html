@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+<div id="app">
+<!--    v-on: 可以写成 @ -->
+    <div @mousedown="fn">111</div>
+</div>
+
+<div id="app1">
+    <input type="text" v-model="val" @keyup.enter="add">
+    <ul>
+        <li v-for="(a,index) in arr">{{a}} <button @click="remove(index)">删除</button></li>
+    </ul>
+
+</div>
+
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        methods:{
+            fn:function(){alert(this.a)} // this表示当前实例 vm
+        },
+        data:{
+            a:1
+        }
+
+    })
+
+    let vm1 = new Vue({
+        el:'#app1',
+        methods:{
+            add(e){
+                this.arr.unshift(this.val),
+                this.val=''
+            },
+            remove(i){
+                this.arr.splice(i,1)
+            }
+        },
+        data:{
+            arr:[],
+            val:'',
+
+        }
+    })
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todoList</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .del{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        TodoList
+      </a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>有{{todos.length}}件事要完成</h4>
+                        <input type="text" class="form-control" v-model="a" @keyup.enter="add">
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" v-for="(todo,index) in filtertodos" @dblclick="remember(todo)">
+                            <span :class="{del:todo.IsSelected}" v-show="cur!=todo">
+                                <input type="checkbox" v-model="todo.IsSelected"> {{todo.title}}
+                            </span>
+                            <input type="text" v-model="todo.title" v-show="cur==todo" @keyup.enter="cancel" @blur="cancel" v-focus="cur==todo">
+                            <button class="float-right btn btn-danger btn-sm" @click="remove(index)">删除</button>
+                        </li>
+                    </ul>
+
+                    <div class="card-footer navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link btn" href="#all" :class="{active:hash==='#all'}">全部任务</a>
+                                <a class="nav-item nav-link btn" href="#finish" :class="{active:hash==='#finish'}">已完成</a>
+                                <a class="nav-item nav-link btn" href="#unfinish" :class="{active:hash==='#unfinish'}">未完成</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="toduList.js"></script>
+
+
+</body>
+</html>

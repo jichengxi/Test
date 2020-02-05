@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="a">
+    {{msg}}
+    </br>
+    <input type="text" v-model="b">
+    {{message}}
+</div>
+
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            a:'',
+            b:'',
+            msg:'',
+            message:''
+        },
+        computed:{
+            msg:{
+                get()
+                {
+                    if (this.a.length < 3) {
+                        return '少了'
+                    }
+                    if (this.a.length > 6){
+                        return '多了'
+                    }
+                    return ''
+                }
+
+            },
+        },
+        watch:{
+            b(NewVal){
+                setTimeout(()=>{
+                    if (NewVal.length<3){
+                        console.log(this.message)
+                        return this.message = '太少'
+                    }
+                    if (NewVal.length>6){
+                        console.log(this.message)
+                        return this.message = '太多'
+                    }
+                    this.message = ''
+                },1000)
+
+            },
+        },
+
+    })
+
+</script>
+</body>
+</html>

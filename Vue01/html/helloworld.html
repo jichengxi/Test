@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>helloworld</title>
+</head>
+<body>
+<div id="app">
+    {{ msg==='hello'?1:0 }}
+    <br/>
+    <input type="text" v-model="msg">
+
+<!--    防止{{}} 出现在屏幕上-->
+    <div v-text="msg"></div>
+
+<!--    只绑定一次-->
+    <div v-once>
+        {{ msg }} {{ msg }}
+    </div>
+
+<!--    把html字符当作html渲染-->
+    <div v-html="p">{{ p }}</div>
+
+    {{ a.school }}
+    {{ a.age }}
+
+    {{b}}
+</div>
+
+
+
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello',
+            p:'<h1>hello</h1>',
+            a:{'school':''},
+            b:[1,2,3,4,5],
+        }
+    });
+    // 使用变量时，先要初始化， 否则新加的属性不会导致页面刷新
+    //1. 此方法可以给对象添加响应式的数据变化
+    vm.$set(vm.a,'school',1);
+    //2. 替换原对象
+    vm.a = {'school':'aaaa','age':8,'address':'xxx'};
+
+    vm.b = vm.b.map(value => value*3);
+    vm.b = vm.b.filter(value => value>8);
+</script>
+
+</body>
+</html>

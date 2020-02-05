@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover table-bordered">
+                <caption class="h2 text-danger text-center" style="caption-side: top">购物车</caption>
+                <tr>
+                    <th>全选 <input type="checkbox" v-model="CheckAll"></th>
+                    <td>商品</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                    <td>小计</td>
+                    <td>操作</td>
+                </tr>
+                <tr v-for="(product,index) in products">
+                    <td><input type="checkbox" v-model="product.IsSelected"> </td>
+<!--                    v-bind: 等价于 : -->
+                    <td>
+                        <img :src="product.ProductCover" title="product.ProductName">
+                        {{product.ProductName}}
+                    </td>
+                    <td>{{product.ProductPrice}}</td>
+                    <td><input type="number" v-model.number.lazy ="product.ProductCount" min="1"></td>
+                    <td>{{product.ProductPrice*product.ProductCount |toFixed(2)}} </td>
+                    <td><button class="btn btn-danger" @click="remove(index)">删除</button> </td>
+                </tr>
+                <tr><td colspan="6">总价格：{{sum|toFixed(2)}}</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        // 专门用来发送ajax的方法
+        created(){  // 数据被初始化时会被调用，this也是vm实例
+            this.getdata()
+        },
+        computed:{
+            // 全选
+            CheckAll:{  // get和set的this指向实例
+                get(){  // 默认v-model会获取CheckAll的值，会调用get方法
+                    return this.products.every(a=>a.IsSelected);
+                },
+                set(i){ // 当给i赋值的时候
+                    this.products.forEach(b=>b.IsSelected=i);
+                },
+            },
+            sum:{
+                get(){
+                    return this.products.reduce((prev,next)=>{
+                        if(!next.IsSelected)return prev;
+                        return prev+next.ProductPrice*next.ProductCount;
+                    },0);
+                }
+            }
+        },
+        filter:{    // 自定义过滤器
+            toFixed(a,b){      // a代表管道符的结果，b代表传的参数
+                return a.toFixed(b)
+            }
+        },
+        methods:{
+            // 删除购物车商品
+            remove(i){
+                this.products.splice(i,1)
+            },
+
+            // ajax获取数据
+            getdata(){
+                axios.get('./carts.json').then(res=> {  //success
+                this.products = res.data;
+            },err=> {  //error
+                console.log(err);
+            });
+            }
+        },
+        data:{
+            products:[],
+        }
+    })
+</script>
+</body>
+</html>

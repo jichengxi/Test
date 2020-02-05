@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <link rel="stylesheet" href="../node_modules/animate.css/animate.css">
+    <style>
+        div>div{
+            width: 200px;
+            height: 200px;
+            background-color: #1e7e34;
+        }
+        /*.v-enter, .v-leave-to{opacity: 0}*/
+        /*.v-enter-active, .v-leave-active{transition:opacity 1s linear}*/
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="flag=!flag">切换</button>
+    <input type="text" v-model="query">
+    <transition-group  enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
+        <div v-for="a in newarr"  :key="Math.random()">{{a}}</div>
+    </transition-group>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        computed:{
+            newarr(){
+                return this.arr.filter(x=>x==this.query)
+            }
+        },
+        data:{
+            flag:true,
+            arr:[1,2,3,4,5,6],
+            query:'',
+        }
+
+    })
+
+</script>
+
+</body>
+</html>
