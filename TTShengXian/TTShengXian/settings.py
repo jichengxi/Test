@@ -169,3 +169,8 @@ LOGIN_URL = '/user/login'  # /login?next=/user
 
 # 设置django文件存储类
 DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.FDFSStorage'
+
+# 设置fastdfs存储服务的配置文件路径
+FDFS_CLIENT_CONF = './utils/fastdfs/client.conf'
+# 设置fastdfs存储服务器的nginx网址
+FDFS_URL = 'http://192.168.0.250:8888/'

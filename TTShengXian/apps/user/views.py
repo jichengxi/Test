@@ -222,7 +222,7 @@ class UserInfoView(LoginRequiredMixin, View):
             goods_li.append(goods)
 
         # 组织上下文
-        context = {'page': 'user', 'address': address, 'goods_li':goods_li}
+        context = {'page': 'user', 'address': address, 'goods_li': goods_li}
         return render(request, 'user_center_info.html', context)
 
 
