@@ -5,6 +5,15 @@ from fdfs_client.client import Fdfs_client, get_tracker_conf
 
 class FDFSStorage(Storage):
     """fastdfs文件存储类"""
+    def __init__(self, client_conf=None, base_url=None):
+        """初始化"""
+        if client_conf is None:
+            client_conf = settings.FDFS_CLIENT_CONF
+        self.client_conf = client_conf
+
+        if base_url is None:
+            base_url = settings.FDFS_URL
+        self.base_url = base_url
 
     def _open(self, name, mode='rb'):
         """打开文件时使用"""
@@ -16,7 +25,7 @@ class FDFSStorage(Storage):
         # content: 包含你上传文件内容的File对象
 
         # 创建一个Fdfs_client对象
-        client_path = get_tracker_conf('./utils/fastdfs/client.conf')
+        client_path = get_tracker_conf(self.client_conf)
         client = Fdfs_client(client_path)
 
         # 上传文件到fastdfs系统中
@@ -34,4 +43,4 @@ class FDFSStorage(Storage):
 
     def url(self, name):
         """返回访问文件的url路径"""
-        return name
+        return self.base_url + name
