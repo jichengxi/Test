@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scope-component</title>
+</head>
+<body>
+<div id="app">
+    <component1></component1>
+    <component2></component2>
+</div>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    // 局部组件
+    // 1. 创建组件
+    // 2. 注册组件
+    // 3. 引用组件
+    // 组件是相互独立的 不能直接跨作用域 实例也是一个组件，组件中拥有生命周期函数
+    let component1 = {template:'<div>组件1</div>'};
+    let component2 = {template:'<div>组件2</div>'};
+    let vm = new Vue({
+        el:"#app",
+        components:{
+            component1:component1,
+            component2:component2,
+        },
+        data:{
+
+        }
+    })
+</script>
+
+
+</body>
+</html>

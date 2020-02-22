@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component</title>
+</head>
+<body>
+<div id="app">
+    <my-handsome></my-handsome>
+
+</div>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    Vue.component('my-handsome',{  // 一个对象可以看成一个组件
+        template:'<div>aaa<span>bbb</span><span>{{msg}}</span></div>',
+        data(){  // 组件中的数据必须是函数类型， 返回一个实例作为组件的数据
+            return {msg:'ccc'}
+        },
+    });
+    let vm = new Vue({
+        el:"#app",
+
+    })
+</script>
+
+
+</body>
+</html>
