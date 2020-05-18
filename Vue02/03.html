@@ -2,12 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>03</title>
     <script src="node_modules/vue/dist/vue.js"></script>
+    <style>
+        div.red {
+            width: 250px;
+            height: 250px;
+            background-color: #ff0000;
+        }
+
+        div.hasborder {
+            border: 5px solid #000000;
+            /*border-width: 5px;*/
+            /*border-style: solid;*/
+            /*border-color: #000000;*/
+        }
+    </style>
 </head>
 <body>
     <!-- View -->
     <div id="app">
+
+        <!-- 1. v-bind属性设定src
+        <img src="images/timg.jpg">
+        <img v-bind:src="ImgUrl" title="xxx">
+        -->
+        <img :src="ImgUrl" title="xxx" alt="xxx"><br/>
+
+        <!-- 2. v-bind操作class
+         <div class="red"></div>
+         -->
+        <input type="button" value="添加边框1" @click="add1">
+        <!-- 字符串 数组 -->
+        <div :class="DivClass"></div>
+        <br/>
+        <!-- josn -->
+        <div :class="{red: IsRed, hasborder: IsBorder}"></div>
+        <br/>
+
+        <!-- 2. v-bind操作style
+         <div class="red" style="border: 5px solid #000000"></div>
+         -->
+        <input type="button" value="添加边框2" @click="add2">
+        <div class="red" :style="BorderStyle"></div>
+        <br/>
+        <div class="red" :style="{borderWidth: borderWidthStr, borderStyle: borderStyleStr, borderColor: borderColorStr}"></div>
+
 
     </div>
 
@@ -15,6 +55,30 @@
     <script type="text/javascript">
         let vm = new Vue({
             el: "#app",
+            data: {
+                ImgUrl: "images/timg.jpg",
+                DivClass: ['red'],
+                IsRed: true,
+                IsBorder: false,
+                BorderStyle: '',
+                borderWidthStr: '',
+                borderStyleStr: '',
+                borderColorStr: ''
+            },
+            methods: {
+                add1: function () {
+                    if(this.DivClass.indexOf('hasborder') <0){
+                        this.DivClass.push('hasborder');
+                    }
+                    this.IsBorder = true;
+                },
+                add2: function () {
+                    this.BorderStyle= 'border: 5px solid #000000';
+                    this.borderWidthStr = '5px';
+                    this.borderStyleStr = 'solid';
+                    this.borderColorStr = '#000000';
+                }
+            }
         });
     </script>
 
