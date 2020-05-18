@@ -2,19 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>04</title>
     <script src="node_modules/vue/dist/vue.js"></script>
+    <style>
+        .active{
+            color: red;
+        }
+        .page{
+            list-style: none;
+        }
+        .page>li{
+            float: left;
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #dddddd;
+            background: #eeeeee;
+        }
+        a{
+            text-decoration:none;
+        }
+    </style>
 </head>
 <body>
     <!-- View -->
     <div id="app">
-
+        <ul class="page">
+            <li>
+                <a href="#">上一页</a>
+            </li>
+            <li v-for="n in pageCount">
+                <a href="#" :class="pageCenter==n?'active':''">{{n}}</a>
+            </li>
+            <li>
+                <a href="#">下一页</a>
+            </li>
+        </ul>
     </div>
 
     <!-- ViewModel -->
     <script type="text/javascript">
         let vm = new Vue({
             el: "#app",
+            data: {
+                pageCount: 10,
+                pageCenter: 5,
+            }
         });
     </script>
 

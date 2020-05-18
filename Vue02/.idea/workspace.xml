@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0dcb9804-0db6-4550-922a-839e519fb6a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/Test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/04.html" beforeDir="false" afterPath="$PROJECT_DIR$/04.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1aNzJRitc8Hyzw7MqaDBlIoOlI3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GitHub\Test\Vue02" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0dcb9804-0db6-4550-922a-839e519fb6a0" name="Default Changelist" comment="" />
+      <created>1586590767363</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586590767363</updated>
+      <workItem from="1586590775150" duration="10377000" />
+      <workItem from="1586603221682" duration="10706000" />
+      <workItem from="1586623567484" duration="7762000" />
+      <workItem from="1586664663048" duration="740000" />
+      <workItem from="1586665518852" duration="496000" />
+      <workItem from="1586666038714" duration="181000" />
+      <workItem from="1586666237500" duration="5189000" />
+      <workItem from="1589804770297" duration="4416000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="723" y="349" key="#com.intellij.tools.ToolEditorDialog" timestamp="1586591277476">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="723" y="349" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586591277476" />
+    <state x="360" y="249" key="SettingsEditor" timestamp="1589806268993">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="360" y="249" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589806268993" />
+    <state x="645" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586590779373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="645" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586590779373" />
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1586602774536">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586602774536" />
+  </component>
+</project>
