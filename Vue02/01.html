@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <!-- v-if 、v-else 和 v-show -->
+        <input type="button" value="按钮" @click="show">
+        <p v-if="showp">1. v-if</p>
+        <p v-else>1. v-if-else</p>
+        <p v-show="showp">2. v-show</p>
+
+        <!-- v-for -->
+        <ul>
+            <li v-for="(a, index) in arr">{{a}} {{index}}</li>
+        </ul>
+
+        <!-- v-model -->
+        <input type="text" v-model="theValue">
+        <p>{{theValue}}</p>
+
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        let vue = new Vue({
+            el: "#app",
+            data: {
+                showp: true,
+                arr: ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen', 'Suzhou', 'Nanjing', 'Hangzhou'],
+                theValue: "hello world"
+            },
+            methods:{
+                show(){
+                    this.if = !this.if;
+                    this.showp = !this.showp
+
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

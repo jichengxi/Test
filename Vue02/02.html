@@ -2,9 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>02</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-$END$
+    <!-- View -->
+    <div class="container">
+        <div class="row">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="username" class="col-sm-2 control-label">用户名：</label>
+                    <div class="col-sm-8">
+                        <input id="username" type="text" class="form-control" v-model="username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="comment" class="col-sm-2 control-label">备 注：</label>
+                    <div class="col-sm-8">
+                        <input id="comment" type="text" class="form-control" v-model="comment">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-8 text-center">
+                        <input type="button" value="添加" class="btn-primary" @click="add">
+                        <input type="reset" value="取消" class="btn-danger" @click="cancel">
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">用户名</th>
+                    <th class="text-center">备注</th>
+                    <th class="text-center">操作</th>
+                </thead>
+                <tbody>
+                    <!--  arr[0]不存在即false,反过来即true  -->
+                    <tr v-if="arr.length == 0">
+                        <td colspan="4" class="text-center text-danger">
+                            暂时没有数据。。。
+                        </td>
+                    </tr>
+                    <tr class="text-center" v-for="(a, index) in arr">
+                        <td>{{index}}</td>
+                        <td>{{a[0]}}</td>
+                        <td>{{a[1]}}</td>
+                        <td>
+                            <input type="button" class="btn btn-warning btn-sm" value="删除" @click="del(index)">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        let vm = new Vue({
+            el: ".container",
+            data: {
+                username: "",
+                comment: "",
+                arr: [],
+            },
+            methods: {
+                add(){
+                    if (this.username != "" && this.comment != ""){
+                        this.arr.push([this.username, this.comment]);
+                        this.username = "";
+                        this.comment = "";
+                    }
+                },
+                cancel(){
+                    this.username = "";
+                    this.comment = "";
+                },
+                del(b){
+                    this.arr.splice(b, 1)
+                },
+            },
+        });
+    </script>
+
 </body>
 </html>
