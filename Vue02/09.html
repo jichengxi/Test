@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <input type="button" value="切换" @click="beOrNotToBe">
+        <my-component v-if="isShow"></my-component>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        Vue.component('my-component', {
+            template: `
+                <div>
+                    <input type="button" @click="handleclick" value="点击">
+                    <h4>hello {{count}}</h4>
+                </div>`,
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                handleclick: function () {
+                    this.count++
+                }
+            },
+            beforeCreate: function () {
+                console.log('beforeCreate.....')
+            },
+            created: function () {
+                console.log('created.....')
+            },
+            beforeMount: function () {
+                console.log('beforeMount.....')
+            },
+            mounted: function () {
+                console.log('mounted.....')
+            },
+            beforeUpdate: function () {
+                console.log('beforeUpdate.....')
+            },
+            updated: function () {
+                console.log('updated.....')
+            },
+            beforeDestroy: function () {
+                console.log('beforeDestroy.....')
+            },
+            destroyed: function () {
+                console.log('destroyed.....')
+            }
+        });
+
+
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                isShow: true,
+            },
+            methods: {
+                beOrNotToBe: function () {
+                    this.isShow = !this.isShow
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

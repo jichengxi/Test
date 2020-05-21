@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <input type="button" value="+" @click="countadd">
+        <input type="button" value="-" @click="countdel">
+        {{count}}
+        <h1 v-jcx="count">11111111111</h1>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                count: 0
+            },
+            methods: {
+                countadd: function(){
+                    this.count++;
+                },
+                countdel: function(){
+                    this.count--;
+                }
+            },
+            directives:{
+                jcx:{
+                    bind: function(el, bindings){
+                        console.log('binding.....');
+                        console.log(el, bindings);
+                        if (bindings.value > 0){
+                            el.setAttribute('style', 'display: block');
+                        }
+                        else{
+                            el.setAttribute('style', 'display: none');
+                        }
+
+                    },
+                    update: function(el, bindings){
+                        console.log('update.....');
+                        console.log(el, bindings);
+                        if (bindings.value > 0){
+                            el.setAttribute('style', 'display: block');
+                        }
+                        else{
+                            el.setAttribute('style', 'display: none');
+                        }
+                    },
+                    unbind: function(el, bindings){
+
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <h1>{{price | myprice('￥')}}</h1>
+        <h1>{{price | myprice('$')}}</h1>
+        <h1>{{word | myword(true)}}</h1>
+        <h1>{{word | myword(false)}}</h1>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                price: 1250,
+                word: 'aBcD'
+            },
+            filters: {
+                myprice: function (myinput, arg) {
+                    console.log(myinput, arg)
+                    var pricetmp = myinput / 100;
+                    return arg + ' ' + pricetmp;
+                },
+                myword: function (myinput, arg) {
+                    console.log(myinput, arg)
+                    if (arg){
+                        return myinput.toUpperCase();
+                    }
+                    else{
+                        return  myinput.toLowerCase();
+                    }
+
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

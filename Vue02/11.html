@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <model1></model1>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        Vue.component('model1', {
+            template:`
+                <div>
+                    <ul v-show="isShow">
+                        <li v-for="arr in array">{{arr}}</li>
+                    </ul>
+                    <model2 @showOrNotEvent="showOrNotFun" @addItemEvent="addItemFun"></model2>
+                </div>
+            `,
+            data: function () {
+                return {
+                    isShow: true,
+                    array: [5, 10, 15, 20]
+                }
+            },
+            methods: {
+                showOrNotFun: function () {
+                    this.isShow = !this.isShow;
+                },
+                addItemFun: function (item) {
+                    this.array.push(item);
+                }
+            }
+        });
+
+        Vue.component('model2', {
+            template: `
+                <div>
+                    <input type="button" value="显示/不显示" @click="showOrNot">
+                    <input type="button" value="添加" @click="addItem">
+                </div>
+            `,
+            methods: {
+                showOrNot: function () {
+                    this.$emit('showOrNotEvent');
+                },
+                addItem: function () {
+                    this.$emit('addItemEvent', 25);
+                }
+            }
+        })
+
+        let vm = new Vue({
+            el: "#app",
+        });
+    </script>
+
+</body>
+</html>

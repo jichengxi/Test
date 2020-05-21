@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <input type="text" v-model="m">
+        {{msg}}
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                m: 'hello warld!'
+            },
+            computed: {
+                msg: function () {
+                    return this.m.split('').reverse().join('');
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

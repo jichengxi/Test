@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <child-1></child-1>
+        <child-2></child-2>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        // 两个同级组件间通信
+        let bridge = new Vue();
+
+        Vue.component('child-1', {
+            template: `
+                <div>
+                    <input type="button" value="1->2" @click="sendData">
+                </div>
+            `,
+            methods: {
+                sendData: function () {
+                    bridge.$emit('oneToTwoEvent', 'hello 2, i am 1')
+                }
+            }
+        });
+
+        Vue.component('child-2', {
+            template: `
+                <div>
+                    <h4>msg: {{msg}}</h4>
+                </div>
+            `,
+            data: function(){
+                return {
+                    msg: ''
+                }
+            },
+            mounted: function () {
+                // mounted 被调用时 只是定义了回调函数
+                // 当child-1来触发时间时，引擎来调用回调函数，此时初始化函数中的this指向
+                // 解决方法： 用闭包
+                let that = this;
+                bridge.$on('oneToTwoEvent', function (msg) {
+                    console.log('收到来自1的: ' + msg );
+                    that.msg = msg;
+                })
+            }
+        });
+
+
+        let vm = new Vue({
+            el: "#app",
+        });
+    </script>
+
+</body>
+</html>

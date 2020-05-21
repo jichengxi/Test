@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <model1></model1>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        // model1父组件，model2子组件
+        Vue.component('model1', {
+            template: `
+                <div>
+                    <model2 ref="mySon"></model2>
+                    <input type="button" value="获得子组件信息" @click="getSonData">
+                </div>
+            `,
+            data: function () {
+                return {
+                    parentStr: 'i am father'
+                }
+            },
+            methods: {
+                getSonData: function () {
+                    console.log('获得子组件信息: ' + this.$refs.mySon.sonStr)
+                }
+            }
+        });
+
+        Vue.component('model2', {
+            template: `
+                <div></div>
+            `,
+            data: function () {
+                return {
+                    sonStr: 'i am son'
+                }
+            },
+            mounted: function () {
+                console.log('子组件的mount: ' + this.$parent.parentStr)
+            }
+        })
+
+        let vm = new Vue({
+            el: "#app",
+        });
+    </script>
+
+</body>
+</html>

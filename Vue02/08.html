@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <parent></parent>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        Vue.component('child-first', {
+            template:`
+            <h4>this is a first child:{{word}}</h4>`,
+            data: function () {
+                return {
+                    word: 'hello world!'
+                }
+            }
+        });
+        Vue.component('child-second', {
+            template: `
+            <div>
+                <h4>this is a second child</h4>
+                <div v-for="item in array">{{item}}</div>
+            </div>`,
+            data: function () {
+                return {
+                    array: ['abc', 'def', 'gh']
+                }
+            }
+        });
+        Vue.component('parent', {
+            template:`
+            <div>
+                <child-first></child-first>
+                <child-second></child-second>
+            </div>`
+        });
+
+        let vm = new Vue({
+            el: "#app",
+        });
+    </script>
+
+</body>
+</html>

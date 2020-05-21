@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <my-component></my-component>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        Vue.component('my-component', {
+            template: `
+                <div>
+                    <input type="text" v-model="val1">
+                    <input type="text" v-model="val2">
+                    <p>{{val1}}</p>
+                    <p>{{val2}}</p>
+                </div>
+            `,
+            data: function () {
+                return {
+                    val1: 'abc',
+                    val2: 123
+                }
+            },
+            watch: {
+                val1: function () {
+                    console.log('my val1 is updated as ' + this.val1)
+                },
+                val2: function () {
+                    console.log('my val2 is updated as ' + this.val2)
+                }
+            }
+        });
+        let vm = new Vue({
+            el: "#app",
+        });
+    </script>
+
+</body>
+</html>
