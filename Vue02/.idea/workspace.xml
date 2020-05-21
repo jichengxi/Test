@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0dcb9804-0db6-4550-922a-839e519fb6a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/19.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/Test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04.html" beforeDir="false" afterPath="$PROJECT_DIR$/04.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +49,25 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\GitHub\Test\Vue02" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\GitHub\Test\Vue02" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="17.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vue02/17.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.17.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -69,6 +87,7 @@
       <workItem from="1586666038714" duration="181000" />
       <workItem from="1586666237500" duration="5189000" />
       <workItem from="1589804770297" duration="4416000" />
+      <workItem from="1590083527883" duration="8128000" />
     </task>
     <servers />
   </component>
@@ -83,17 +102,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="723" y="349" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586591277476" />
-    <state x="360" y="249" key="SettingsEditor" timestamp="1589806268993">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1590087679983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="360" y="249" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589806268993" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590087679983" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1590087679983">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590087679983" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1590087679983">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590087679983" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1590087679983">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590087679983" />
+    <state x="360" y="249" key="SettingsEditor" timestamp="1590088197062">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="360" y="249" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590088197062" />
     <state x="645" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586590779373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="645" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586590779373" />
-    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1586602774536">
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1590091478288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586602774536" />
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590091478288" />
   </component>
 </project>

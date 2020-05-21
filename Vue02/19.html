@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vue-resource/dist/vue-resource.js"></script>
+    <style>
+        .base {
+            width: 320px;
+            height: 400px;
+            background-color: #dddddd;
+            border: 3px solid #1b6583;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <ul>
+            <li v-for="a in list">{{a.name}}</li>
+        </ul>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+
+
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                list: []
+            },
+            mounted: function () {
+                // 发送ajax请求
+                var url = 'http://127.0.0.1:63342/Vue02/1.json';
+                console.log(this.$http.get(url));
+                this.$http.get(url).then(function(data){
+                    console.log(data.body)
+                    this.list = data.body
+                })
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vue-router/dist/vue-router.js"></script>
+    <style>
+        .base {
+            width: 320px;
+            height: 400px;
+            background-color: #dddddd;
+            border: 3px solid #1b6583;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- View -->
+    <div id="app">
+        <router-view></router-view>
+    </div>
+
+    <!-- ViewModel -->
+    <script type="text/javascript">
+        // 参数接收方
+        let myMain = Vue.component('my-main', {
+            template: `
+                <div class="base">
+                    <h1>用户名：{{userName}}</h1>
+                </div>
+            `,
+            data: function(){
+                return {
+                    userName: ''
+                }
+            },
+            mounted: function () {
+                console.log(this.$route.params);
+                this.userName = this.$route.params.user;
+            }
+        });
+
+        // 参数发送方
+        let myLogin = Vue.component('my-login', {
+            template: `
+                <div class="base">
+                    <input type="text" v-model="userName">
+                    <router-link :to="'/main/' + userName">去main</router-link>
+                </div>
+            `,
+            data: function () {
+                return {
+                    userName: ''
+                }
+            }
+        });
+
+        // 错误页
+        let notFound = Vue.component('not-found', {
+            template: `
+                <div class="base">
+                    <h4>404 page not found</h4>
+                    <router-link to="login">返回首页</router-link>
+                </div>
+            `,
+        });
+
+        const myRoutes = [
+            {path: '', component: myLogin},
+            {path: '/login', component: myLogin, alias: '/logon'}, // 别名
+            {path: '/mylogin', redirect: '/login'},  // 重定向
+            {path: '/main/:user', component: myMain},
+            {path: '*', component: notFound}  // 报错页
+        ];
+
+        const myRoute = new VueRouter({
+            routes: myRoutes
+        })
+
+        let vm = new Vue({
+            el: "#app",
+            router: myRoute
+        });
+    </script>
+
+</body>
+</html>
