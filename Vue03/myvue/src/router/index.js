@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './router'
+import { setTitle } from '@/lib/util'
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,8 @@ const router = new VueRouter({
 const HAS_LOGIN = true
 // to：去的页面 from：当前离开的页面 next：执行的函数
 router.beforeEach((to, from, next) => {
+  // if (to.meta.title)
+  to.meta && setTitle(to.meta.title)
   if (to.name !== 'login') {
     if (HAS_LOGIN) next()
     else next({ name: 'login' })

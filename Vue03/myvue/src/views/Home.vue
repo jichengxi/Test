@@ -28,11 +28,11 @@ export default {
       console.log(vm)
     })
   },
-  beforeRouteLeave (to, from, next) {
-    const leave = confirm('您确定要离开吗？')
-    if (leave) next()
-    else next(false)
-  },
+  // beforeRouteLeave (to, from, next) {
+  //   const leave = confirm('您确定要离开吗？')
+  //   if (leave) next()
+  //   else next(false)
+  // },
   methods: {
     handClick: function (type) {
       if (type === 'back') this.$router.back()

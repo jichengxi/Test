@@ -31,6 +31,9 @@ export default [
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
     props: {
       food: 'banana'
+    },
+    meta: {
+      title: '关于'
     }
   },
   {
@@ -70,6 +73,10 @@ export default [
         name: 'Home'
       }
     }
+  },
+  {
+    path: '/store',
+    component: () => import('@/views/store.vue')
   },
   {
     path: '*',
