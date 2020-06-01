@@ -1,15 +1,9 @@
 <template>
-  <input @input="handleInput" :value="value"/>
+  <input @input="handleInput" />
 </template>
 <script>
 export default {
   name: 'AInput',
-  props: {
-    value: {
-      type: [String, Number],
-      default: ''
-    }
-  },
   methods: {
     handleInput (event) {
       const value = event.target.value
@@ -18,3 +12,10 @@ export default {
   }
 }
 </script>
+<!--:value="value"-->
+<!--props: {-->
+<!--    value: {-->
+<!--      type: [String, Number],-->
+<!--      default: ''-->
+<!--    }-->
+<!--  },-->

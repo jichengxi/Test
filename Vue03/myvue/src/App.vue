@@ -22,7 +22,7 @@ export default {
   },
   watch: {
     '$route' (to) {
-      console.log(to)
+      // console.log(to)
       // http://localhost:8080/#/about?transitionName=router
       to.query && to.query.transitionName && (this.routerTransition = to.query.transitionName)
     }
