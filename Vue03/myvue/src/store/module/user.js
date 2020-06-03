@@ -8,8 +8,9 @@ const getters = {
 }
 const mutations = {
   SET_USER_NAME (state, params) {
-    console.log(params)
-    state.userName = params.userName
+    // console.log(state)
+    // console.log(params)
+    state.userName = params
   }
 }
 const actions = {

@@ -7,6 +7,7 @@
     <p>userName: {{userName}} firstLetter: {{firstLetter}}</p>
     <button @click="handleChangeAppName">修改appName</button>
     <p>{{appVersion}}</p>
+    <button @click="handleChangeUserName">修改userName</button>
   </div>
 </template>
 <script>
@@ -14,7 +15,7 @@ import AInput from '_c/AInput.vue'
 import AShow from '_c/AShow.vue'
 // import vuex from 'vuex'
 // const mapState = vuex.mapState
-import { mapState, mapGetters, mapMutations } from 'vuex'
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
   name: 'store',
   data () {
@@ -41,8 +42,8 @@ export default {
     // ])
     ...mapState({
       appName: state => state.appName,
-      userName: state => state.userName,
-      appVersion: state => state.appVersion
+      appVersion: state => state.appVersion,
+      userName: state => state.user.userName
     }),
     // ...mapState('user', {
     //   userName: state => state.userName
@@ -67,16 +68,24 @@ export default {
       'SET_APP_NAME',
       'SET_USER_NAME'
     ]),
+    ...mapActions([
+      'updateAppName'
+    ]),
     handleChangeAppName () {
       // this.$store.commit({
       //   type: 'SET_APP_NAME',
       //   appName: 'newAppName'
       // })
-      this.SET_APP_NAME({
-        appName: 'newAppName'
-      })
+      // this.SET_APP_NAME({
+      //   appName: 'newAppName'
+      // })
+      this.updateAppName()
       // this.$store.commit('SET_APP_VERSION')
+    },
+    handleChangeUserName () {
+      this.SET_USER_NAME('vue-cource')
     }
+
   }
 }
 </script>`
