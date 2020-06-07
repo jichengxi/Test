@@ -14,7 +14,13 @@ const mutations = {
   }
 }
 const actions = {
-  //
+  updateUserName ({ commit, state, rootState, dispatch }) {
+    console.log(rootState.appName)
+    dispatch('xxx', '')
+  },
+  xxx () {
+    //
+  }
 }
 
 export default {
@@ -22,5 +28,8 @@ export default {
   state,
   getters,
   mutations,
-  actions
+  actions,
+  models: {
+    //
+  }
 }

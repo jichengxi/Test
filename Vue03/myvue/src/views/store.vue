@@ -8,6 +8,8 @@
     <button @click="handleChangeAppName">修改appName</button>
     <p>{{appVersion}}</p>
     <button @click="handleChangeUserName">修改userName</button>
+    <button @click="registerModule">动态注册模块</button>
+    <p v-for="(li, index) in todoList" :key="index">{{ li }}</p>
   </div>
 </template>
 <script>
@@ -43,7 +45,8 @@ export default {
     ...mapState({
       appName: state => state.appName,
       appVersion: state => state.appVersion,
-      userName: state => state.user.userName
+      userName: state => state.user.userName,
+      todoList: state => state.user.todo ? state.user.todo.todoList : ''
     }),
     // ...mapState('user', {
     //   userName: state => state.userName
@@ -84,8 +87,19 @@ export default {
     },
     handleChangeUserName () {
       this.SET_USER_NAME('vue-cource')
+      // this.$store.dispatch('updateAppName', '123')
+      // this.$store.state.user.userName = '1111' 错误方法
+    },
+    registerModule () {
+      this.$store.registerModule(['user', 'todo'], {
+        state: {
+          todoList: [
+            '学习mutations',
+            '学习actions'
+          ]
+        }
+      })
     }
-
   }
 }
 </script>`
